@@ -2,8 +2,8 @@ const port = 3000
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
-var router1  = require('./apiRouter');
-const AccountModel = require('./modules/account')
+var router1  = require('./routers/AccountRouter');
+// const AccountModel = require('./modules/account')
 
 app.use(bodyParser.urlencoded({extended: false}));
 

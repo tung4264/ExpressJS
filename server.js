@@ -21,7 +21,7 @@ app.use('/public',express.static(path.join(__dirname,'./public')))
 // }
 
 app.get('/',(req,res,next)=>{
-    var pathFileHome = path.join(__dirname,'./viewer/home.html')
+    var pathFileHome = path.join(__dirname,'./viewer/index.html')
     console.log(pathFileHome)
     res.sendFile(pathFileHome)
 })

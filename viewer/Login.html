@@ -3,16 +3,16 @@
     <head>
         <title>Web Demo - Đăng nhập</title>
 
-        <link rel="stylesheet" href="Login.css"> <!--Import css-->
+        <link rel="stylesheet" href="../public/css/Login.css"> <!--Import css-->
         
         <!--Import jquery, jquery dùng để thao tác với trang web-->
-        <script src="jquery-3.6.3.min.js"></script>
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/jquery-3.6.3.min.js"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
         <!--End import jquery-->
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
+        
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
@@ -25,20 +25,19 @@
         <main class="pnlLoginMain">
           <div class="TitleClass">Đăng nhập</div>
           <div>Tên đăng nhập</div> 
-          <input type="text" class="txtUserName"/>  
+          <input type="text" class="txtUserName" id="username"/>  
           <br> <br>
           <div>Mật khẩu</div>        
-          <input type="password" class="txtPassWord"/>
+          <input type="password" class="txtPassWord" id="password"/>
           <br>
           <input type="checkbox" class="chkLoginRemember"> Ghi nhớ trạng thái đăng nhập
           <br> <br>
         
-          <button class="btn btn-primary" id="btnLogin"> Đăng nhập</button> 
+          <button class="btn btn-primary" id="btnLogin" onclick="login(document.getElementById('username').value,document.getElementById('password').value)"> Đăng nhập</button> 
         </main>
         
           
-
-
-        <script src="Loginjs.js"></script>
+        <script type="javascript" src="../modules/Loginjs.js"></script>
+        <script src="./public/js/main.js"></script>
     </body>
 </html>

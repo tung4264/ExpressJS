@@ -1,9 +1,11 @@
+const path = require('path')
+var pathLoginJson = path.join(__dirname,'./api/v1/login')
 $(document).ready(function() { // bắt đầu vào trang thì làm gì đó
     alert("Mời đăng nhập ");
     
     $("#btnLogin").click(function() { // $
-        
-          axios.get('https://jsonplaceholder.typicode.com/todos/1') // call API method GET
+        console.log(1)
+          axios.get(pathLoginJson) // call API method GET
             .then(function (response) {
                 console.log(response.data); 
                 
@@ -24,3 +26,4 @@ $(document).ready(function() { // bắt đầu vào trang thì làm gì đó
 
 });
 
+// module.exports = loginJS

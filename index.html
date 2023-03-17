@@ -4,9 +4,21 @@
         <meta charset="UTD-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="./public/home.css">
     </head>
+    <link rel="stylesheet" href="./public/css/home.css">
+    <link rel="stylesheet" href="./public/bootstrap/css/bootstrap.css">
     <body>
-        <h1>Hello</h1>
+        <div id="content"></div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#" onclick="previousPage()">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#" onclick="loadPage(1)">1</a></li>
+              <li class="page-item"><a class="page-link" href="#" onclick="loadPage(2)">2</a></li>
+              <li class="page-item"><a class="page-link" href="#" onclick="loadPage(3)">3</a></li>
+              <li class="page-item"><a class="page-link" href="#" onclick="nextPage()">Next</a></li>
+            </ul>
+          </nav>
     </body>
+    <script src="./public/js/jquery-3.6.4.min.js"></script>
+    <script src="./public/js/main.js"></script>
 </html>

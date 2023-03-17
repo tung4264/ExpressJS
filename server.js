@@ -20,13 +20,19 @@ app.use('/public',express.static(path.join(__dirname,'./public')))
 //     }
 // }
 
-app.get('/',(req,res,next)=>{
+app.get('/home',(req,res,next)=>{
     var pathFileHome = path.join(__dirname,'./index.html')
     console.log(pathFileHome)
     res.sendFile(pathFileHome)
 })
+app.get('/login',(req,res,next)=>{
+    var pathFileHome = path.join(__dirname,'./viewer/Login.html')
+    res.sendFile(pathFileHome)
+})
+
+
 // app.use('/admin/api/v1/', router1);
-app.use('/api/v1/', router1);
+app.use('/api/', router1);
 
 // app.use((err,req,res,next) => {
 //     // log bug 

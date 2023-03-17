@@ -2,15 +2,44 @@ var express = require('express');
 var router = express.Router();
 // const { exists } = require('../modules/account');
 const AccountModel = require('../modules/account');
+const PAGE_SIZE = 2
 
 router.get('/account',(req,res,next) => {
-    AccountModel.find({})
-    .then(data=>{
-        res.json(data)
-    })
-    .catch(err=>{
-        res.status(500).json('Server Error!')
-    })
+    var page = req.query.page;
+    if(page){
+        //get page
+        page = parseInt(page)
+        if(page<1){
+            page =1
+        }
+        var skipNumber = (page -1) * PAGE_SIZE
+        
+        AccountModel.find({})
+        .skip(skipNumber)
+        .limit(PAGE_SIZE)
+        .then(data=>{
+            AccountModel.countDocuments({}).then((total)=>{
+                var totalPage = Math.ceil(total/PAGE_SIZE)
+                res.json({
+                    total: totalPage,
+                    data: data
+                });
+            })
+            
+        })
+        .catch(err=>{
+            res.status(500).json('Server Error!')
+        })
+    }else{
+        //get all
+        AccountModel.find({})
+        .then(data=>{        
+            res.json(data)
+        })
+        .catch(err=>{
+            res.status(500).json('Server Error!')
+        })
+    }
 })
 
 router.get('/account/:id',(req,res,next) => {
@@ -72,16 +101,17 @@ router.post('/register',(req,res,next) => {
 router.post('/login',(req,res,next) =>{
     var _username = req.body.username
     var _password = req.body.password
-
+    // console.log(_username,_password)
     AccountModel.findOne({
         username: _username,
         password: _password 
     })
     .then(data =>{
+        // console.log(data)
         if(data){
             res.json('Login Sucess')
         }else{
-            res.status(400).json('Username or passwoed not correct')
+            res.status(400).json('Username or password not correct')
         }
     })
     .catch(err=>{

@@ -21,7 +21,7 @@ app.use('/public',express.static(path.join(__dirname,'./public')))
 // }
 
 app.get('/',(req,res,next)=>{
-    var pathFileHome = path.join(__dirname,'./viewer/index.html')
+    var pathFileHome = path.join(__dirname,'./index.html')
     console.log(pathFileHome)
     res.sendFile(pathFileHome)
 })
@@ -31,7 +31,8 @@ app.use('/api/v1/', router1);
 // app.use((err,req,res,next) => {
 //     // log bug 
 // })
-app.listen(process.env.PORT, () =>{
+// process.env.PORT
+app.listen(port, () =>{
     console.log(`Example app listening at http://localhost:${port}`)
 });
 

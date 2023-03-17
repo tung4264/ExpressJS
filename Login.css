@@ -1,0 +1,41 @@
+.TitleClass{
+    font-size: 30px;
+    font-weight: bold; 
+ }
+
+ .pnlLoginMain{
+    display: block;   
+    width: 200px;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px;
+    border-color:black;
+ }
+
+ 
+ .txtUserName{
+    display: block;
+    height: 40px;
+    width: 300px;
+    
+ }
+ 
+ .txtPassWord{
+    display: block;
+    height: 40px;
+    width: 300px;
+    /* margin-left: auto;
+    margin-right: auto;  */
+ }
+ 
+ .btnLogin{  
+    width: auto;
+    height: 50px;
+    font-weight: bold;
+    background-color: cadetblue;    
+     
+ }
+ 

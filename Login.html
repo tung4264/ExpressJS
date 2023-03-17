@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Demo - Đăng nhập</title>
+
+        <link rel="stylesheet" href="Login.css"> <!--Import css-->
+        
+        <!--Import jquery, jquery dùng để thao tác với trang web-->
+        <script src="jquery-3.6.3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <!--End import jquery-->
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+        
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script> <!--Import axios dùng để gọi api-->
+    </head>
+    <body>
+        
+        <br>
+        <main class="pnlLoginMain">
+          <div class="TitleClass">Đăng nhập</div>
+          <div>Tên đăng nhập</div> 
+          <input type="text" class="txtUserName"/>  
+          <br> <br>
+          <div>Mật khẩu</div>        
+          <input type="password" class="txtPassWord"/>
+          <br>
+          <input type="checkbox" class="chkLoginRemember"> Ghi nhớ trạng thái đăng nhập
+          <br> <br>
+        
+          <button class="btn btn-primary" id="btnLogin"> Đăng nhập</button> 
+        </main>
+        
+          
+
+
+        <script src="Loginjs.js"></script>
+    </body>
+</html>

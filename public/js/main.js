@@ -9,8 +9,8 @@ function loadPage(page){
     .then(data=>{
         // console.log(data);
         $('#content').html('')
-        for(let i =0 ;i< data.length; i++){
-            const element = data[i];
+        for(let i =0 ;i< data.data.length; i++){
+            const element = data.data[i];
     
             var item = $(`
                 <h1>${element.username} : ${element.lastname}</h1>

@@ -20,7 +20,7 @@ app.use('/public',express.static(path.join(__dirname,'./public')))
 //     }
 // }
 
-app.get('/home',(req,res,next)=>{
+app.get('/',(req,res,next)=>{
     var pathFileHome = path.join(__dirname,'./index.html')
     console.log(pathFileHome)
     res.sendFile(pathFileHome)

@@ -21,7 +21,8 @@ router.get('/account',(req,res,next) => {
             AccountModel.countDocuments({}).then((total)=>{
                 var totalPage = Math.ceil(total/PAGE_SIZE)
                 res.json({
-                    total: totalPage,
+                    total: total,
+                    totalPage: totalPage,
                     data: data
                 });
             })

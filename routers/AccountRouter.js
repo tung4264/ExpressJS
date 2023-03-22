@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 // const { exists } = require('../modules/account');
 const AccountModel = require('../modules/account');
+const jwt = require('jsonwebtoken');
 const PAGE_SIZE = 2
 
 router.get('/account',(req,res,next) => {
@@ -105,18 +106,22 @@ router.post('/login',(req,res,next) =>{
     // console.log(_username,_password)
     AccountModel.findOne({
         username: _username,
-        password: _password 
+        Password: _password 
     })
     .then(data =>{
         // console.log(data)
         if(data){
-            res.json('Login Sucess')
+            var _token = jwt.sign({_id: data._id},'thnk');
+            res.json({
+                message: 'Login Sucess',
+                token: _token
+            });
         }else{
-            res.status(400).json('Username or password not correct')
+            res.status(400).json('Username or password not correct');
         }
     })
     .catch(err=>{
-        res.status(500).json('Login false server error')
+        res.status(500).json('Login false server error');
     })
 })
 //Update data

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Web Demo - Đăng nhập</title>
+        <title>Đăng nhập</title>
 
         <link rel="stylesheet" href="../public/css/Login.css"> <!--Import css-->
         
@@ -16,7 +16,6 @@
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
-        
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script> <!--Import axios dùng để gọi api-->
     </head>
     <body>
@@ -25,19 +24,18 @@
         <main class="pnlLoginMain">
           <div class="TitleClass">Đăng nhập</div>
           <div>Tên đăng nhập</div> 
-          <input type="text" class="txtUserName" id="username"/>  
+          <input type="text" class="txtUserName" id="username" value="nttung4"/>  
           <br> <br>
           <div>Mật khẩu</div>        
-          <input type="password" class="txtPassWord" id="password"/>
+          <input type="password" class="txtPassWord" id="password" value="123456"/>
           <br>
           <input type="checkbox" class="chkLoginRemember"> Ghi nhớ trạng thái đăng nhập
           <br> <br>
         
           <button class="btn btn-primary" id="btnLogin" onclick="login(document.getElementById('username').value,document.getElementById('password').value)"> Đăng nhập</button> 
         </main>
+        <script type="text/javascript" src="../public/js/jquery-3.6.4.min.js"></script>
+        <script src="../public/js/login.js"></script>
         
-          
-        <script type="javascript" src="../modules/Loginjs.js"></script>
-        <script src="./public/js/main.js"></script>
     </body>
 </html>

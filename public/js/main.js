@@ -38,28 +38,5 @@ function loadPage(page){
         console.log('call API error')
     })
 }
-// function nextPage(){
-//     loadPage(currentPage+1)
-// }
-// function previousPage(){
-//     loadPage(currentPage-1)
-// }
-function login(_username,_password){
-    $.ajax({
-        url:'/api/login',
-        type: 'POST',
-        dataType: 'json',
-        data: {username: _username,Password:_password}
-    })
-    .then(data=>{
-        // alert(data)
-        alert("Đăng nhập thành công");  //hiển thị popup thông báo   
-        window.location.href = './'; //điều hướng trang
-        
-    })
-    .catch(err=>{
-        console.log("Call api login false "+ err)
-    })
-}
 loadPage(1)
 

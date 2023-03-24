@@ -1,8 +1,8 @@
-var express = require('express')
-var cookieParser = require('cookie-parser')
+// var express = require('express')
+// var cookieParser = require('cookie-parser')
 
-var app = express()
-app.use(cookieParser())
+// var app = express()
+// app.use(cookieParser())
 
 function login(_username,_password){
     $.ajax({

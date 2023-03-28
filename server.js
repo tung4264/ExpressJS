@@ -11,6 +11,7 @@ const AccountModel = require('./MongoConnection/AccountConnection');
 
 app.use(cookieParser());
 app.use(cors());
+app.options('*', cors());
 
 app.use(bodyParser.urlencoded({extended: false}));
 

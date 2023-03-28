@@ -6,9 +6,11 @@ var router1  = require('./routers/AccountRouter');
 const path = require('path')
 var cookieParser = require('cookie-parser');
 var jwt = require('jsonwebtoken');
+var cors = require('cors');
 const AccountModel = require('./MongoConnection/AccountConnection');
 
 app.use(cookieParser());
+app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: false}));
 

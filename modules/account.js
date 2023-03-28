@@ -1,26 +1,28 @@
-// Using Node.js `require()`
-const mongoose = require('mongoose');
+// // Using Node.js `require()`
+// const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/BasicWeb',{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+// const URL = "mongodb://admin:IvFcqCTo8kWtqRDs@cluster0-shard-00-00.flml8.mongodb.net:27017,cluster0-shard-00-01.flml8.mongodb.net:27017,cluster0-shard-00-02.flml8.mongodb.net:27017/?ssl=true&replicaSet=atlas-jttv87-shard-0&authSource=admin&retryWrites=true&w=majority";
 
-const Schema = mongoose.Schema;
+// mongoose.connect(URL,{
+//     // useNewUrlParser: true,
+//     // useUnifiedTopology: true
+// });
 
-const AccountSchema = new Schema({
-    username: String,
-    Password: String,
-    firstname: String,
-    lastname: String,
-    email: String,
-    phonenumber: String,
-    role: Number,
-    position: Number
-},{
-    collection: 'account'
-});
+// const Schema = mongoose.Schema;
 
-const AccountModel = mongoose.model('account',AccountSchema)
+// const AccountSchema = new Schema({
+//     username: String,
+//     Password: String,
+//     firstname: String,
+//     lastname: String,
+//     email: String,
+//     phonenumber: String,
+//     role: Number,
+//     position: Number
+// },{
+//     collection: 'account'
+// });
 
-module.exports = AccountModel
+// const AccountModel = mongoose.model('account',AccountSchema)
+
+// module.exports = AccountModel

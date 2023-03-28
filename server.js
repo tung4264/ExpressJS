@@ -6,7 +6,7 @@ var router1  = require('./routers/AccountRouter');
 const path = require('path')
 var cookieParser = require('cookie-parser');
 var jwt = require('jsonwebtoken');
-const AccountModel = require('./modules/account');
+const AccountModel = require('../MongoConnection/AccountConnection');
 
 app.use(cookieParser());
 

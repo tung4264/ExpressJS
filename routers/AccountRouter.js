@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 // const { exists } = require('../modules/account');
-const AccountModel = require('../modules/account');
+const AccountModel = require('../../MongoConnection/AccountConnection');
 const jwt = require('jsonwebtoken');
 const PAGE_SIZE = 2
 
@@ -103,7 +103,7 @@ router.post('/register',(req,res,next) => {
 router.post('/login',(req,res,next) =>{
     var _username = req.body.username
     var _password = req.body.password
-    // console.log(_username,_password)
+    console.log(_username,_password)
     AccountModel.findOne({
         username: _username,
         Password: _password 
@@ -121,7 +121,7 @@ router.post('/login',(req,res,next) =>{
         }
     })
     .catch(err=>{
-        res.status(500).json('Login false server error');
+        res.status(500).json('Login false server error '+ err);
     })
 })
 //Update data

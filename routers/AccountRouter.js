@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 // const { exists } = require('../modules/account');
-const AccountModel = require('../../MongoConnection/AccountConnection');
+const AccountModel = require('../MongoConnection/AccountConnection');
 const jwt = require('jsonwebtoken');
 const PAGE_SIZE = 2
 

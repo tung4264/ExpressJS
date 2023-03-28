@@ -1,4 +1,4 @@
-// var express = require('express')
+// const path = require('path')
 // var cookieParser = require('cookie-parser')
 
 // var app = express()
@@ -12,7 +12,7 @@ function login(_username,_password){
         data: {username: _username,password:_password}
       })
       .then(data=>{
-        console.log(data);
+        // console.log(data);
         setCookie('token',data.token,1);
       })
     .catch(err=>{

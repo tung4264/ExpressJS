@@ -17,11 +17,11 @@ app.use(bodyParser.json());
 app.use('/public',express.static(path.join(__dirname,'./public')))
 
 app.get('/',(req,res,next)=>{
-    var pathFileHome = path.join(__dirname,'./viewer/Login.html')
+    var pathFileHome = path.join(__dirname,'./index.html')
     res.sendFile(pathFileHome)
 })
 app.get('/home',(req,res,next)=>{
-    var pathFileHome = path.join(__dirname,'./index.html')
+    var pathFileHome = path.join(__dirname,'./viewer/home.html')
     res.sendFile(pathFileHome)
 })
 

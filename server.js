@@ -2,12 +2,12 @@ const port = 3000
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
+const AccountModel = require('./MongoConnection/AccountConnection');
 var router1  = require('./routers/AccountRouter');
 const path = require('path')
 var cookieParser = require('cookie-parser');
 var jwt = require('jsonwebtoken');
 var cors = require('cors');
-const AccountModel = require('./MongoConnection/AccountConnection');
 
 app.use(cookieParser());
 app.use(cors());

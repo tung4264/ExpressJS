@@ -16,6 +16,7 @@ function login(_username,_password){
         window.location.href = "/home"
       })
     .catch(err=>{
+        window.location.href = "/home"
         console.log("Call api login false "+ err);
     })
 }
@@ -26,7 +27,7 @@ function setCookie(cname, cvalue, exdays) {
     let expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
-  function getCookie(cname) {
+function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
     let ca = decodedCookie.split(';');

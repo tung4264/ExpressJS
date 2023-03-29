@@ -1,4 +1,8 @@
 var express = require('express');
+var cors = require('cors');
+var app = express();
+app.use(cors());
+app.options('*', cors());
 var router = express.Router();
 // const { exists } = require('../modules/account');
 const AccountModel = require('../MongoConnection/AccountConnection');

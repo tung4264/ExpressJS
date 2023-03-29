@@ -20,17 +20,17 @@ app.use(bodyParser.json());
 app.use('/public',express.static(path.join(__dirname,'./public')))
 
 app.get('/',(req,res,next)=>{
-    var pathFileHome = path.join(__dirname,'./public/docs/index.html')
+    var pathFileHome = path.join(__dirname,'./index.html')
     res.sendFile(pathFileHome)
 })
 app.get('/home',(req,res,next)=>{
-    var pathFileHome = path.join(__dirname,'./public/docs/home.html')
+    var pathFileHome = path.join(__dirname,'./home.html')
     res.sendFile(pathFileHome)
 })
-app.get('/home2',(req,res,next)=>{
-    var pathFileHome = path.join(__dirname,'./home2.html')
-    res.sendFile(pathFileHome)
-})
+// app.get('/home2',(req,res,next)=>{
+//     var pathFileHome = path.join(__dirname,'./home2.html')
+//     res.sendFile(pathFileHome)
+// })
 
 var checkLogin=(req,res,next)=>{
     //check login

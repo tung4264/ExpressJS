@@ -18,14 +18,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use('/public',express.static(path.join(__dirname,'./public')))
-app.use('/viewer',express.static(path.join(__dirname,'./viewer')))
 
 app.get('/',(req,res,next)=>{
     var pathFileHome = path.join(__dirname,'./index.html')
     res.sendFile(pathFileHome)
 })
 app.get('/home',(req,res,next)=>{
-    var pathFileHome = path.join(__dirname,'./viewer/home.html')
+    var pathFileHome = path.join(__dirname,'./public/viewer/home.html')
     res.sendFile(pathFileHome)
 })
 

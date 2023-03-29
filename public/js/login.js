@@ -16,7 +16,6 @@ function login(_username,_password){
         window.location.href = "/home"
       })
     .catch(err=>{
-        window.location.href = "/home"
         console.log("Call api login false "+ err);
     })
 }

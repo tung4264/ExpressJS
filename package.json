@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "node_modules\r package=lock.json",
   "main": "server.js",
+  "homepage": "https://tung4264.github.io",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"

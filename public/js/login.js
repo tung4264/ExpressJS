@@ -13,10 +13,10 @@ function login(_username,_password){
       .then(data=>{
         // console.log(data);
         setCookie('token',data.token,1);
-        window.location.href = "/home"
+        window.location.href = "./home"
       })
     .catch(err=>{
-        window.location.href = "/home"
+        window.location.href = "./home"
         console.log("Call api login false "+ err);
     })
 }

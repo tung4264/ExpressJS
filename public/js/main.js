@@ -1,5 +1,5 @@
 $('#paging').pagination({
-    dataSource: '/api/account?page=1',
+    dataSource: './api/account?page=1',
     locator: 'data',
     totalNumberLocator: function(response) {
         // you can return totalNumber by analyzing response content

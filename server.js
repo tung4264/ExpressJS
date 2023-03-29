@@ -20,11 +20,11 @@ app.use(bodyParser.json());
 app.use('/public',express.static(path.join(__dirname,'./public')))
 
 app.get('/',(req,res,next)=>{
-    var pathFileHome = path.join(__dirname,'./public/viewer/index.html')
+    var pathFileHome = path.join(__dirname,'./public/docs/index.html')
     res.sendFile(pathFileHome)
 })
 app.get('/home',(req,res,next)=>{
-    var pathFileHome = path.join(__dirname,'./public/viewer/home.html')
+    var pathFileHome = path.join(__dirname,'./public/docs/home.html')
     res.sendFile(pathFileHome)
 })
 app.get('/home2',(req,res,next)=>{

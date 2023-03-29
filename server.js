@@ -27,6 +27,10 @@ app.get('/home',(req,res,next)=>{
     var pathFileHome = path.join(__dirname,'./public/viewer/home.html')
     res.sendFile(pathFileHome)
 })
+app.get('/home2',(req,res,next)=>{
+    var pathFileHome = path.join(__dirname,'./home2.html')
+    res.sendFile(pathFileHome)
+})
 
 var checkLogin=(req,res,next)=>{
     //check login

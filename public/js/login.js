@@ -5,7 +5,7 @@
 
 function login(_username,_password){
     $.ajax({
-        url:'/api/login',
+        url:'./api/login',
         type: 'POST',
         dataType: 'json',
         data: {username: _username,password:_password}

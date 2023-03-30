@@ -20,7 +20,7 @@ var currentPage = 1
 function loadPage(page){
     currentPage = page
     $.ajax({
-        url:'/api/account?page='+page,
+        url:'./api/account?page='+page,
         type: 'GET'
     })
     .then(rs=>{
@@ -35,7 +35,7 @@ function loadPage(page){
         }
     })
     .catch(err=>{
-        console.log('call API error')
+        console.log('call API error '+ err)
     })
 }
 loadPage(1)

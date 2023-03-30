@@ -11,7 +11,7 @@ var cors = require('cors');
 
 app.use(cookieParser());
 app.use(cors());
-app.options('*', cors({ port: 3000 }));
+app.options('*', cors());
 
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -100,11 +100,11 @@ app.get('/teacher',checkLogin,checkManager,(req,res,next)=>{
 // app.use('/admin/api/v1/', router1);
 app.use('/api/', router1);
 
-// app.use((err,req,res,next) => {
-//     // log bug 
-// })
-// process.env.PORT
-app.listen(port, () =>{
-    console.log(`Example app listening at http://localhost:${port}`)
+// app.listen(port, () =>{
+//     console.log(`Example app listening at http://localhost:${port}`)
+// });
+
+app.listen(process.env.PORT, () =>{
+    
 });
 

@@ -11,7 +11,7 @@ var cors = require('cors');
 
 app.use(cookieParser());
 app.use(cors());
-app.options('*', cors());
+app.options('*', cors({ port: 3000 }));
 
 app.use(bodyParser.urlencoded({extended: false}));
 

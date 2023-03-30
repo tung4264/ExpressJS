@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use('/public',express.static(path.join(__dirname,'./public')))
+app.use('/routers',express.static(path.join(__dirname,'./routers')))
 
 app.get('/',(req,res,next)=>{
     var pathFileHome = path.join(__dirname,'./index.html')

@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 
 app.use('/public',express.static(path.join(__dirname,'./public')))
 app.use('/routers',express.static(path.join(__dirname,'./routers')))
+app.use('/api/', router1);
 
 app.get('/',(req,res,next)=>{
     var pathFileHome = path.join(__dirname,'./index.html')
@@ -98,13 +99,13 @@ app.get('/teacher',checkLogin,checkManager,(req,res,next)=>{
 
 
 // app.use('/admin/api/v1/', router1);
-app.use('/api/', router1);
 
-// app.listen(port, () =>{
-//     console.log(`Example app listening at http://localhost:${port}`)
-// });
 
-app.listen(process.env.PORT, () =>{
-    
+app.listen(process.env.PORT || port, (resq) =>{
+    console.log(`Example app listening at http://localhost:${port}`);
 });
+
+// app.listen(process.env.PORT, () =>{
+    
+// });
 

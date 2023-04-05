@@ -18,9 +18,15 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use('/public',express.static(path.join(__dirname,'./public')))
-app.use('/routers',express.static(path.join(__dirname,'./routers')))
+app.use(express.static(path.join(__dirname,'./routers')))
 app.use('/api/', router1);
+///
+// app.post('/login',function(req,res,Next){
+//     alert("Post");
+// });
 
+
+///
 app.get('/',(req,res,next)=>{
     var pathFileHome = path.join(__dirname,'./index.html')
     res.sendFile(pathFileHome)
@@ -29,6 +35,7 @@ app.get('/home',(req,res,next)=>{
     var pathFileHome = path.join(__dirname,'./home.html')
     res.sendFile(pathFileHome)
 })
+
 
 var checkLogin=(req,res,next)=>{
     //check login

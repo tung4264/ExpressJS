@@ -2,11 +2,17 @@
   "name": "expressjs",
   "version": "1.0.0",
   "description": "node_modules\r package=lock.json",
+  "license": "Apache-2.0",
   "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tung4264/ExpressJS"
+  },
   "homepage": "https://tung4264.github.io/ExpressJS",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "echo \"start\" && node server.js"
+    
   },
   "author": "",
   "license": "ISC",

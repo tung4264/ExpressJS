@@ -8,12 +8,12 @@ const path = require('path')
 var cookieParser = require('cookie-parser');
 var jwt = require('jsonwebtoken');
 var cors = require('cors');
-const https = require('https');
-const fs = require('fs');
-const options = {
-    key: fs.readFileSync('./Key/key.pem'),
-    cert: fs.readFileSync('./Key/cert.pem')
-};
+// const https = require('https');
+// const fs = require('fs');
+// const options = {
+//     key: fs.readFileSync('./Key/key.pem'),
+//     cert: fs.readFileSync('./Key/cert.pem')
+// };
 
 app.use(cookieParser());
 app.use(cors());
@@ -119,13 +119,13 @@ app.post('/login',function(req,res,next){
 
 // app.use('/admin/api/v1/', router1);
 
-https.createServer(options, app).listen(process.env.PORT || port, (resq) =>{
-        console.log(`Example app listening at https://localhost:${port}`);
-    });
+// https.createServer(options, app).listen(process.env.PORT || port, (resq) =>{
+//         console.log(`Example app listening at https://localhost:${port}`);
+//     });
 
-// app.listen(process.env.PORT || port, (resq) =>{
-//     console.log(`Example app listening at http://localhost:${port}`);
-// });
+app.listen(process.env.PORT || port, (resq) =>{
+    console.log(`Example app listening at http://localhost:${port}`);
+});
 
 // app.listen(process.env.PORT, () =>{
     

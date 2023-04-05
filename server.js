@@ -8,6 +8,12 @@ const path = require('path')
 var cookieParser = require('cookie-parser');
 var jwt = require('jsonwebtoken');
 var cors = require('cors');
+const https = require('https');
+const fs = require('fs');
+const options = {
+    key: fs.readFileSync('./Key/key.pem'),
+    cert: fs.readFileSync('./Key/cert.pem')
+};
 
 app.use(cookieParser());
 app.use(cors());
@@ -104,13 +110,22 @@ app.get('/teacher',checkLogin,checkManager,(req,res,next)=>{
     res.json('task')
 })
 
+// app.post('/login',function(req,res,next){
+//     var _username  = req.body.username;
+//     var _password  = req.body.password;
+
+//     res.send("Post result "+ _username+" "+_password);
+// })
 
 // app.use('/admin/api/v1/', router1);
 
+https.createServer(options, app).listen(process.env.PORT || port, (resq) =>{
+        console.log(`Example app listening at https://localhost:${port}`);
+    });
 
-app.listen(process.env.PORT || port, (resq) =>{
-    console.log(`Example app listening at http://localhost:${port}`);
-});
+// app.listen(process.env.PORT || port, (resq) =>{
+//     console.log(`Example app listening at http://localhost:${port}`);
+// });
 
 // app.listen(process.env.PORT, () =>{
     

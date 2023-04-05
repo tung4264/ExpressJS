@@ -110,12 +110,12 @@ app.get('/teacher',checkLogin,checkManager,(req,res,next)=>{
     res.json('task')
 })
 
-// app.post('/login',function(req,res,next){
-//     var _username  = req.body.username;
-//     var _password  = req.body.password;
+app.post('/login',function(req,res,next){
+    var _username  = req.body.username;
+    var _password  = req.body.password;
 
-//     res.send("Post result "+ _username+" "+_password);
-// })
+    res.send("Post result "+ _username+" "+_password);
+})
 
 // app.use('/admin/api/v1/', router1);
 

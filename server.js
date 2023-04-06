@@ -1,13 +1,32 @@
 const port = 3000
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var session = require('express-session');
 const AccountModel = require('./MongoConnection/AccountConnection');
 var router1  = require('./routers/AccountRouter');
 const path = require('path')
 var cookieParser = require('cookie-parser');
 var jwt = require('jsonwebtoken');
 var cors = require('cors');
+const MongoStore = require('connect-mongo');
+
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { 
+    secure: false 
+    // ,maxAge
+    },
+    store: MongoStore.create({
+        mongoUrl: 'mongodb://admin:IvFcqCTo8kWtqRDs@cluster0-shard-00-00.flml8.mongodb.net:27017,cluster0-shard-00-01.flml8.mongodb.net:27017,cluster0-shard-00-02.flml8.mongodb.net:27017/?ssl=true&replicaSet=atlas-jttv87-shard-0&authSource=admin&retryWrites=true&w=majority',
+        ttl: 14 * 24 * 60 * 60,
+        autoRemove: 'native'
+    })
+}))
+
 // const https = require('https');
 // const fs = require('fs');
 // const options = {
@@ -27,10 +46,6 @@ app.use('/public',express.static(path.join(__dirname,'./public')))
 app.use(express.static(path.join(__dirname,'./routers')))
 app.use('/api/', router1);
 ///
-// app.post('/login',function(req,res,Next){
-//     alert("Post");
-// });
-
 
 ///
 app.get('/',(req,res,next)=>{
@@ -109,12 +124,40 @@ app.get('/teacher',checkLogin,checkManager,(req,res,next)=>{
 },(req,res,next)=>{
     res.json('task')
 })
-
-app.post('/login',function(req,res,next){
-    var _username  = req.body.username;
-    var _password  = req.body.password;
-
-    res.send("Post result "+ _username+" "+_password);
+//save sesion to mongocloud
+app.get('/demo', function(req, res, next) {
+    // req.session.user = {
+    //     uuid: '12234-2345-2323423'
+    // }
+    req.session.save(err => {
+        if(err){
+            console.log(err);
+            res.json("err "+err)
+        } else {
+            // console.log(req.session);
+            res.send(req.session.user)
+        }
+    });
+    // if (req.session.views) {
+    //   req.session.views++
+    //   res.setHeader('Content-Type', 'text/html')
+    //   res.write('<p>views: ' + req.session.views + '</p>')
+    //   res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
+    //   res.end()
+    // } else {
+    //   req.session.views = 1
+    //   res.end('welcome to the session demo. refresh!')
+    // }
+  });
+// Delete session 
+app.get('/logout',function(req,res,next){
+    req.session.destroy(err => {
+        if(err){
+            console.log(err);
+        } else {
+            res.send('Session is destroyed')
+        }
+    });
 })
 
 // app.use('/admin/api/v1/', router1);

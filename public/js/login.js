@@ -4,14 +4,15 @@
 // app.use(cookieParser())
 
 function login(_username,_password){
-    $.ajax({
+  console.log(_username,_password);
+  $.ajax({
         url:'./api/login',
         type: 'POST',
         dataType: 'json',
         data: {username: _username,password:_password}
       })
       .then(data=>{
-        // console.log(data);
+        console.log(1);
         setCookie('token',data.token,1);
         window.location.href = "./home"
       })
@@ -42,3 +43,6 @@ function getCookie(cname) {
     }
     return "";
   }
+  // login2
+
+    

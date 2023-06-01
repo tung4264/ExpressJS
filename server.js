@@ -49,6 +49,7 @@ app.use('/api/', router1);
 
 ///
 app.get('/',(req,res,next)=>{
+    // var pathFileHome = path.join(__dirname,'./login.html')
     var pathFileHome = path.join(__dirname,'./index.html')
     res.sendFile(pathFileHome)
 })

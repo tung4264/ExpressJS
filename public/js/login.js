@@ -3,23 +3,38 @@
 // var app = express()
 // app.use(cookieParser())
 
+
+
 function login(_username,_password){
-  console.log(_username,_password);
+  // alert("1")
   $.ajax({
         url:'./api/login',
         type: 'POST',
-        dataType: 'json',
+        dataType: "json",
         data: {username: _username,password:_password}
-      })
-      .then(data=>{
-        console.log(1);
+      }).done(function( data) {
+        // alert(data.token);
+        // debugger;
         setCookie('token',data.token,1);
-        window.location.href = "./home"
+        window.location.href = "./home";
+        return false;
+        
+      }).fail(function(err){
+        console.log("error fetching message"+err);
+        return false;
       })
-    .catch(err=>{
-        // window.location.href = "./home"
-        console.log("Call api login false "+ err);
-    })
+      // .then( function(data){
+      //     console.log(data);
+      //     setCookie('token',data.token,1);
+      //     // window.location.href = "./home";
+      //     self.location.href = "./home";
+      // }).catch(function(err){
+      //     // window.location.href = "./home"
+      //     console.log("Call api login false "+ err);
+      // })
+      
+
+
 }
 
 function setCookie(cname, cvalue, exdays) {

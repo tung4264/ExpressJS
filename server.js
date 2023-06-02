@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 const AccountModel = require('./MongoConnection/AccountConnection');
 var router1  = require('./routers/AccountRouter');
+var routerChat = require('./routers/chatGPT');
 const path = require('path')
 var cookieParser = require('cookie-parser');
 var jwt = require('jsonwebtoken');
@@ -45,6 +46,7 @@ app.use(bodyParser.json());
 app.use('/public',express.static(path.join(__dirname,'./public')))
 app.use(express.static(path.join(__dirname,'./routers')))
 app.use('/api/', router1);
+app.use('/chat/',routerChat);
 ///
 
 ///
@@ -56,6 +58,10 @@ app.get('/',(req,res,next)=>{
 app.get('/home',(req,res,next)=>{
     var pathFileHome = path.join(__dirname,'./home.html')
     res.sendFile(pathFileHome)
+})
+app.get('/chat',(req,res,next)=>{
+    var pathChat = path.join(__dirname,'./viewer/chatbox.html')
+    res.sendFile(pathChat)
 })
 
 
@@ -161,7 +167,7 @@ app.get('/logout',function(req,res,next){
     });
 })
 
-// app.use('/admin/api/v1/', router1);
+// app.use('/api/chat/', routerChat);
 
 // https.createServer(options, app).listen(process.env.PORT || port, (resq) =>{
 //         console.log(`Example app listening at https://localhost:${port}`);

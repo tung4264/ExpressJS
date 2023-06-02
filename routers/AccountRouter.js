@@ -107,7 +107,7 @@ router.post('/register',(req,res,next) => {
 router.post('/login',(req,res,next) =>{
     var _username = req.body.username
     var _password = req.body.password
-    console.log(_username,_password)
+    // console.log(_username,_password)
     AccountModel.findOne({
         username: _username,
         Password: _password 
@@ -156,5 +156,9 @@ router.delete('/account/:id',(req,res,next) => {
         res.status(500).json('server error')
     }) 
 })
+
+router.post('/check', (req,res,next)=>{
+    res.json('it work')
+  })
 
 module.exports = router

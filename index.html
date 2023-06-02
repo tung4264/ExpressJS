@@ -4,9 +4,16 @@
    <head>
       <meta charset="utf-8">
       <title>Animated Login Form</title>
-      <!-- <link rel="stylesheet" href="style.css"> -->
       <link rel="stylesheet" href="./public/css/Login.css"> <!--Import css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <script type="text/javascript" src="./public/js/jquery-3.6.4.min.js"></script>
+      <script type="text/javascript" src="./public/js/login.js"></script>
+      <!-- <link rel="stylesheet" href="style.css"> -->
+      <!-- <link rel="stylesheet" href="./public/css/Login.css"> -->
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
+      <!-- <script type="text/javascript" src="./public/js/jquery-3.6.4.min.js"></script> -->
+      <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> Import axios dùng để gọi api -->
+      <!-- <script type="text/javascript" src="./public/js/login.js"></script> -->
       
    </head>
    <body>
@@ -25,7 +32,8 @@
             <div class="button" >
                <div class="inner"></div>
                <!-- <button>LOGIN</button> -->
-               <button class="btn btn-primary" id="btnLogin" onclick="login(document.getElementById('username').value,document.getElementById('password').value)">LOGIN</button> 
+               <button id="btnLogin">LOGIN</button> 
+               <!-- <button id="btnLogin" onclick="login(document.getElementById('username').value,document.getElementById('password').value)">LOGIN</button>  -->
             </div>
          </form>
          <div class="auth">
@@ -43,7 +51,7 @@
             Not a member? <a href="#">Signup now</a>
          </div>
       </div>
-      <script>
+      <script type="text/javascript">
          var input = document.querySelector('.pswrd');
          var show = document.querySelector('.show');
          show.addEventListener('click', active);
@@ -58,8 +66,11 @@
              show.style.color = "#111";
            }
          }
+         $("#btnLogin").click( function (evt){
+            evt.preventDefault();
+            login(document.getElementById('username').value,document.getElementById('password').value)
+         })
+         
       </script>
-      <script type="text/javascript" src="./public/js/jquery-3.6.4.min.js"></script>
-      <script type="text/javascript" src="./public/js/login.js"></script>
    </body>
 </html>

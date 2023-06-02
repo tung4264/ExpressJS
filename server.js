@@ -63,7 +63,10 @@ app.get('/chat',(req,res,next)=>{
     var pathChat = path.join(__dirname,'./viewer/chatbox.html')
     res.sendFile(pathChat)
 })
-
+app.get('/index',(req,res,next)=>{
+    var pathChat = path.join(__dirname,'./viewer/index.html')
+    res.sendFile(pathChat)
+})
 
 var checkLogin=(req,res,next)=>{
     //check login

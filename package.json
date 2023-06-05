@@ -10,7 +10,7 @@
   "homepage": "https://tung4264.github.io/ExpressJS",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "echo \"start\" && nodemon server.js"
+    "start": "echo \"start\" && node server.js"
   },
   "author": "tung4264",
   "license": "ISC",

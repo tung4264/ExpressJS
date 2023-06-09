@@ -16,7 +16,7 @@ function login(_username,_password){
         // alert(data.token);
         // debugger;
         setCookie('token',data.token,1);
-        window.location.href = "./home";
+        window.location.href = "./index";
         return false;
         
       }).fail(function(err){

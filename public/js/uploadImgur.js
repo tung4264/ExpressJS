@@ -8,12 +8,12 @@ $('#submitBtn').click(function(){
       url: './imgur/uploadImgur',
       type: 'POST',
       data: formData,
-      enctype: 'multipart/form-data',
+      
       cache: false,
       contentType: false,
       processData: false,
       success: function(response) {
-        // console.log(response.data);
+        console.log(response.data);
         var photo = response.data.link;
         var photo_hash = response.data.deletehash;
       },

@@ -39,43 +39,6 @@ router.post('/uploadImgur', (req, res, next) => {
       console.log(error.response.data);
     }
   );
-    // //add headers
-    // const options = {
-    //   headers: { "Authorization": "Client-ID " + process.env.CLIENT_ID }
-    // };
-  
-    // //create body payload
-    // const body = {
-    //   data: formData
-    // }; 
-  // axios.post('https://api.imgur.com/3/image', body, options).then((response) => {
-  //   //receive response
-  //   // console.log(1);
-  //   console.log(response);
-  //   res.status(200).json({ status: 'success' });
-  // }).catch((error) => {
-  //   console.log(error)
-  // });
-
-
-
-  // $.ajax({
-  //   url: "https://api.imgur.com/3/image",
-  //   type: "POST",
-  //   datatype: "json",
-  //   headers: {
-  //     "Authorization": "Client-ID " + process.env.CLIENT_ID
-  //   },
-  //   data: pformData,
-  //   success: function (response) {
-  //     console.log(response);
-  //     var photo = response.data.link;
-  //     var photo_hash = response.data.deletehash;
-  //   },
-  //   cache: false,
-  //   contentType: false,
-  //   processData: false
-  // });
 });
 
 module.exports = router;

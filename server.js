@@ -5,12 +5,16 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 const AccountModel = require('./MongoConnection/AccountConnection');
 var router1  = require('./routers/AccountRouter');
+var routerImgur  = require('./routers/Imgur');
 var routerChat = require('./routers/chatGPT');
 const path = require('path')
 var cookieParser = require('cookie-parser');
 var jwt = require('jsonwebtoken');
 var cors = require('cors');
 const MongoStore = require('connect-mongo');
+require("dotenv").config();
+const axios = require('axios');
+
 
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
@@ -39,13 +43,12 @@ app.use(cookieParser());
 app.use(cors());
 app.options('*', cors());
 
-app.use(bodyParser.urlencoded({extended: false}));
-
 app.use(bodyParser.json());
 
 app.use('/public',express.static(path.join(__dirname,'./public')))
 app.use(express.static(path.join(__dirname,'./routers')))
 app.use('/api/', router1);
+app.use('/imgur', routerImgur);
 app.use('/chat/',routerChat);
 ///
 
@@ -64,9 +67,27 @@ app.get('/chat',(req,res,next)=>{
     res.sendFile(pathChat)
 })
 app.get('/index',(req,res,next)=>{
-    var pathChat = path.join(__dirname,'./viewer/index.html')
-    res.sendFile(pathChat)
+    var pathIndex = path.join(__dirname,'./viewer/index.html')
+    res.sendFile(pathIndex)
 })
+
+app.get('/indexDemo',(req,res,next)=>{
+    var pathIndexDemo = path.join(__dirname,'./viewer/indexDemo.html')
+    res.sendFile(pathIndexDemo)
+})
+app.get('/about',(req,res,next)=>{
+    var pathIndexDemo = path.join(__dirname,'./viewer/about.html')
+    res.sendFile(pathIndexDemo)
+})
+app.get('/gallery',(req,res,next)=>{
+    var pathIndexDemo = path.join(__dirname,'./viewer/gallery.html')
+    res.sendFile(pathIndexDemo)
+})
+app.get('/contact',(req,res,next)=>{
+    var pathIndexDemo = path.join(__dirname,'./viewer/contact.html')
+    res.sendFile(pathIndexDemo)
+})
+
 
 var checkLogin=(req,res,next)=>{
     //check login

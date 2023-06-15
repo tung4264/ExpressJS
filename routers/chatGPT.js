@@ -7,7 +7,7 @@ app.options('*', cors());
 var routerChat = express.Router();
 const { Configuration, OpenAIApi } = require("openai");
 
-routerChat.post('/check', (req,res,next)=>{
+routerChat.post('/check2', (req,res,next)=>{
   res.json('it work')
 })
 

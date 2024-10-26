@@ -56,11 +56,11 @@ app.use('/chat/',routerChat);
 ///
 app.get('/',(req,res,next)=>{
     // var pathFileHome = path.join(__dirname,'./login.html')
-    var pathFileHome = path.join(__dirname,'./indexDemo.html')
+    var pathFileHome = path.join(__dirname,'./index.html')
     res.sendFile(pathFileHome)
 })
 app.get('/home',(req,res,next)=>{
-    var pathFileHome = path.join(__dirname,'./indexDemo.html')
+    var pathFileHome = path.join(__dirname,'./index.html')
     res.sendFile(pathFileHome)
 })
 app.get('/chat',(req,res,next)=>{

@@ -251,15 +251,15 @@ loadPage(1)
 		}
 	};
 
-	// Parallax
-	// var parallax = function() {
-	// 	$(window).stellar();
-	// };
+	Parallax
+	var parallax = function() {
+		$(window).stellar();
+	};
 
 	
 	$(function(){
 		mobileMenuOutsideClick();
-		// parallax();
+		parallax();
 		offcanvasMenu();
 		burgerMenu();
 		contentWayPoint();

@@ -46,6 +46,7 @@ app.options('*', cors());
 app.use(bodyParser.json());
 
 app.use('/public',express.static(path.join(__dirname,'./public')))
+app.use('/viewer',express.static(path.join(__dirname,'./viewer')))
 app.use(express.static(path.join(__dirname,'./routers')))
 app.use('/api/', router1);
 app.use('/imgur', routerImgur);
@@ -55,11 +56,11 @@ app.use('/chat/',routerChat);
 ///
 app.get('/',(req,res,next)=>{
     // var pathFileHome = path.join(__dirname,'./login.html')
-    var pathFileHome = path.join(__dirname,'./index.html')
+    var pathFileHome = path.join(__dirname,'./viewer/indexDemo.html')
     res.sendFile(pathFileHome)
 })
 app.get('/home',(req,res,next)=>{
-    var pathFileHome = path.join(__dirname,'./home.html')
+    var pathFileHome = path.join(__dirname,'./viewer/indexDemo.html')
     res.sendFile(pathFileHome)
 })
 app.get('/chat',(req,res,next)=>{
@@ -71,10 +72,10 @@ app.get('/index',(req,res,next)=>{
     res.sendFile(pathIndex)
 })
 
-app.get('/indexDemo',(req,res,next)=>{
-    var pathIndexDemo = path.join(__dirname,'./viewer/indexDemo.html')
-    res.sendFile(pathIndexDemo)
-})
+// app.get('/indexDemo',(req,res,next)=>{
+//     var pathIndexDemo = path.join(__dirname,'./viewer/indexDemo.html')
+//     res.sendFile(pathIndexDemo)
+// })
 app.get('/about',(req,res,next)=>{
     var pathIndexDemo = path.join(__dirname,'./viewer/about.html')
     res.sendFile(pathIndexDemo)

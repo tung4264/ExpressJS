@@ -115,9 +115,9 @@
      */
     simplyCountdown = function (elt, args) {
         var parameters = extend({
-                year: 2015,
-                month: 6,
-                day: 28,
+                year: 2024,
+                month: 12,
+                day: 2,
                 hours: 0,
                 minutes: 0,
                 seconds: 0,
@@ -187,7 +187,7 @@
 
                 now = new Date();
                 if (parameters.enableUtc) {
-                    nowUtc = new Date(now.getFullYear(), now.getMonth(), now.getDate(),
+                    nowUtc = new Date(now.getFullYear(), now.getMonth()+1, now.getDate(),
                         now.getHours(), now.getMinutes(), now.getSeconds());
                     secondsLeft = (targetDate - nowUtc.getTime()) / 1000;
 

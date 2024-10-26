@@ -1116,6 +1116,9 @@ form label {
 .couple-half .desc-bride .custom{
   padding-left: 180px;
 }
+.couple-half .desc-bride .customMap{
+  padding-left: 180px;
+}
 @media screen and (max-width: 480px) {
   .couple-half .groom, .couple-half .bride {
     margin-left: 0;

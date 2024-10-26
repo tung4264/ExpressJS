@@ -5,7 +5,7 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tung4264/ExpressJS"
+    "url": "https://github.com/tung4264/tunghuyen"
   },
   "homepage": "https://tung4264.github.io/tunghuyen",
   "scripts": {

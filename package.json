@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/tung4264/ExpressJS"
   },
-  "homepage": "https://tung4264.github.io/ExpressJS",
+  "homepage": "https://tung4264.github.io/tunghuyen",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "echo \"start\" && nodemon server.js"
